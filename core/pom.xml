@@ -1,480 +1,482 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<artifactId>kgenerators-core</artifactId>
-	<packaging>jar</packaging>
-	<parent>
-		<groupId>me.kryniowesegryderiusz</groupId>
-		<artifactId>kgenerators-parent</artifactId>
-		<version>7.3</version>
-	</parent>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>kgenerators-core</artifactId>
+    <packaging>jar</packaging>
+    <parent>
+        <groupId>me.kryniowesegryderiusz</groupId>
+        <artifactId>kgenerators-parent</artifactId>
+        <version>7.3</version>
+    </parent>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-	</properties>
-
-
-	<repositories>
-		<!-- This adds the Spigot Maven repository to the build -->
-		<repository>
-			<id>spigot-repo</id>
-			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-		</repository>
-
-		<!-- jitpack -->
-		<repository>
-			<id>jitpack.io</id>
-			<url>https://jitpack.io</url>
-		</repository>
-
-		<!-- HolographicDisplays -->
-		<repository>
-			<id>codemc-repo</id>
-			<url>https://repo.codemc.io/repository/maven-public/</url>
-		</repository>
-
-		<!-- WorldEdit -->
-		<repository>
-			<id>sk89q-repo</id>
-			<url>https://maven.enginehub.org/repo/</url>
-		</repository>
-
-		<!-- WildStacker SuperiorSkyblock2 -->
-		<repository>
-			<id>bg-repo</id>
-			<url>https://repo.bg-software.com/repository/api/</url>
-		</repository>
-
-		<!-- GameProfile -->
-		<repository>
-			<id>authlib</id>
-			<url>https://papermc.io/repo/repository/maven-releases/</url>
-		</repository>
-
-		<!-- PlaceholderAPI -->
-		<repository>
-			<id>placeholderapi</id>
-			<url>
-				https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
-		</repository>
-
-		<!-- MythicMobs -->
-		<repository>
-			<id>nexus</id>
-			<name>Lumine Releases</name>
-			<url>https://mvn.lumine.io/repository/maven-public/</url>
-		</repository>
-
-		<!-- FactionsUUID -->
-		<repository>
-			<id>factionsuuid</id>
-			<name>FactionsUUID</name>
-			<url>https://ci.ender.zone/plugin/repository/everything/</url>
-		</repository>
-
-		<repository>
-			<id>phoenix</id>
-			<url>https://nexus.phoenixdevt.fr/repository/maven-public/</url>
-		</repository>
-
-		<repository>
-			<id>papermc</id>
-			<url>https://repo.papermc.io/repository/maven-public/</url>
-		</repository>
-
-	</repositories>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
 
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>com.intellectualsites.bom</groupId>
-				<artifactId>bom-newest</artifactId>
-				<version>1.47</version>
-				<scope>import</scope>
-				<type>pom</type>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+    <repositories>
+        <!-- This adds the Spigot Maven repository to the build -->
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
 
-	<dependencies>
+        <!-- jitpack -->
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
 
-		<!--This adds the Spigot API artifact to the build -->
-		<dependency>
-			<groupId>org.spigotmc</groupId>
-			<artifactId>spigot-api</artifactId>
-			<version>1.19.3-R0.1-SNAPSHOT</version>
-			<scope>provided</scope>
-		</dependency>
+        <!-- HolographicDisplays -->
+        <repository>
+            <id>codemc-repo</id>
+            <url>https://repo.codemc.io/repository/maven-public/</url>
+        </repository>
 
-		<!-- SuperiorSkyblockAPI -->
-		<dependency>
-			<groupId>com.bgsoftware</groupId>
-			<artifactId>SuperiorSkyblockAPI</artifactId>
-			<version>2024.1</version>
-			<scope>provided</scope>
-		</dependency>
+        <!-- WorldEdit -->
+        <repository>
+            <id>sk89q-repo</id>
+            <url>https://maven.enginehub.org/repo/</url>
+        </repository>
 
-		<dependency>
-			<groupId>com.google.code.findbugs</groupId>
-			<artifactId>jsr305</artifactId>
-			<version>3.0.2</version>
-		</dependency>
+        <!-- WildStacker SuperiorSkyblock2 -->
+        <repository>
+            <id>bg-repo</id>
+            <url>https://repo.bg-software.com/repository/api/</url>
+        </repository>
 
-		<!-- JetsMinions -->
-		<dependency>
-			<groupId>me.jet315</groupId>
-			<artifactId>jetsminions</artifactId>
-			<version>7.1.15</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/libs/JetsMinions-7.5.1.jar</systemPath>
-		</dependency>
+        <!-- GameProfile -->
+        <repository>
+            <id>authlib</id>
+            <url>https://papermc.io/repo/repository/maven-releases/</url>
+        </repository>
 
-		<!-- Minions-Miner-0.0.9 -->
-		<dependency>
-			<groupId>com.thecrappiest</groupId>
-			<artifactId>minions-miner</artifactId>
-			<version>0.0.9</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/libs/Minions-Miner-0.1.1.jar</systemPath>
-		</dependency>
+        <!-- PlaceholderAPI -->
+        <repository>
+            <id>placeholderapi</id>
+            <url>
+                https://repo.extendedclip.com/content/repositories/placeholderapi/
+            </url>
+        </repository>
 
-		<dependency>
-			<groupId>com.github.Slimefun</groupId>
-			<artifactId>Slimefun4</artifactId>
-			<version>RC-22</version>
-		</dependency>
+        <!-- MythicMobs -->
+        <repository>
+            <id>nexus</id>
+            <name>Lumine Releases</name>
+            <url>https://mvn.lumine.io/repository/maven-public/</url>
+        </repository>
 
-		<!-- Project Lombok -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.32</version>
-			<scope>provided</scope>
-		</dependency>
+        <!-- FactionsUUID -->
+        <repository>
+            <id>factionsuuid</id>
+            <name>FactionsUUID</name>
+            <url>https://ci.ender.zone/plugin/repository/everything/</url>
+        </repository>
 
-		<!-- Holographic Displays -->
-		<dependency>
-			<groupId>com.gmail.filoghost.holographicdisplays</groupId>
-			<artifactId>holographicdisplays-api</artifactId>
-			<version>2.4.0</version>
-			<scope>provided</scope>
-		</dependency>
+        <repository>
+            <id>phoenix</id>
+            <url>https://nexus.phoenixdevt.fr/repository/maven-public/</url>
+        </repository>
 
-		<!-- Vault -->
-		<dependency>
-			<groupId>com.github.MilkBowl</groupId>
-			<artifactId>VaultAPI</artifactId>
-			<version>1.7.1</version>
-			<scope>provided</scope>
-		</dependency>
+        <repository>
+            <id>papermc</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
+        </repository>
 
-		<!-- BentoBox -->
-		<dependency>
-			<groupId>world.bentobox</groupId>
-			<artifactId>bentobox</artifactId>
-			<version>1.16.1</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- IridiumSkyblock -->
-		<dependency>
-			<groupId>com.iridium</groupId>
-			<artifactId>iridiumskyblock</artifactId>
-			<version>3.0.7</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/libs/IridiumSkyblock-3.2.8.jar</systemPath>
-		</dependency>
-
-		<dependency>
-			<groupId>com.github.decentsoftware-eu</groupId>
-			<artifactId>decentholograms</artifactId>
-			<version>2.3.1</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- ItemsAdder -->
-		<dependency>
-			<groupId>com.github.LoneDev6</groupId>
-			<artifactId>api-itemsadder</artifactId>
-			<version>3.0.0</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- EcoItems -->
-		<dependency>
-			<groupId>com.willfp</groupId>
-			<artifactId>EcoItems</artifactId>
-			<version>3.46.0</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/libs/EcoItems_v3.46.0.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>com.willfp</groupId>
-			<artifactId>eco</artifactId>
-			<version>3.46.0</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/libs/eco-6.35.1-all.jar</systemPath>
-		</dependency>
-
-		<!-- NBT-API -->
-		<dependency>
-			<groupId>de.tr7zw</groupId>
-			<artifactId>item-nbt-api</artifactId>
-			<version>2.13.1</version>
-		</dependency>
-
-		<!-- WorldEdit -->
-		<dependency>
-			<groupId>com.sk89q.worldedit</groupId>
-			<artifactId>worldedit-core</artifactId>
-			<version>7.2.0-SNAPSHOT</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.sk89q.worldedit</groupId>
-			<artifactId>worldedit-bukkit</artifactId>
-			<version>7.2.0-SNAPSHOT</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- Oraxen -->
-		<dependency>
-			<groupId>com.github.oraxen</groupId>
-			<artifactId>oraxen</artifactId>
-			<version>1.173.0</version>
-			<scope>provided</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>me.gabytm.util</groupId>
-					<artifactId>actions-spigot</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.jetbrains</groupId>
-					<artifactId>annotations</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.ticxo</groupId>
-					<artifactId>PlayerAnimator</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.github.stefvanschie.inventoryframework</groupId>
-					<artifactId>IF</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>io.th0rgal</groupId>
-					<artifactId>protectionlib</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>dev.triumphteam</groupId>
-					<artifactId>triumph-gui</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.bstats</groupId>
-					<artifactId>bstats-bukkit</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.jeff-media</groupId>
-					<artifactId>custom-block-data</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.jeff-media</groupId>
-					<artifactId>persistent-data-serializer</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.jeff_media</groupId>
-					<artifactId>MorePersistentDataTypes</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>gs.mclo</groupId>
-					<artifactId>java</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<!-- WildStacker -->
-		<dependency>
-			<groupId>com.bgsoftware</groupId>
-			<artifactId>WildStackerAPI</artifactId>
-			<version>3.7.0</version>
-		</dependency>
-
-		<!-- GameProfile -->
-		<dependency>
-			<groupId>com.mojang</groupId>
-			<artifactId>authlib</artifactId>
-			<version>1.5.25</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- CMI -->
-		<dependency>
-			<groupId>com.zrips</groupId>
-			<artifactId>cmi</artifactId>
-			<version>8.7.8.2</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/libs/CMIAPI8.7.8.2.jar</systemPath>
-		</dependency>
-
-		<!-- PlaceholderAPI -->
-		<dependency>
-			<groupId>me.clip</groupId>
-			<artifactId>placeholderapi</artifactId>
-			<version>2.11.1</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- HikariCP -->
-		<dependency>
-			<groupId>com.zaxxer</groupId>
-			<artifactId>HikariCP</artifactId>
-			<version>4.0.3</version>
-			<scope>compile</scope>
-			<type>jar</type>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>2.0.6</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<version>2.0.6</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<!-- MMOItems -->
-		<dependency>
-			<groupId>net.Indyuce</groupId>
-			<artifactId>MMOItems-API</artifactId>
-			<version>6.9.2-SNAPSHOT</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- LitMinions -->
-		<dependency>
-			<groupId>com.github.WaterArchery</groupId>
-			<artifactId>LitMinionsAPI</artifactId>
-			<version>2.34</version>
-		</dependency>
-
-		<!-- PlotSquared -->
-		<dependency>
-			<groupId>com.intellectualsites.plotsquared</groupId>
-			<artifactId>plotsquared-core</artifactId>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.intellectualsites.plotsquared</groupId>
-			<artifactId>plotsquared-bukkit</artifactId>
-			<scope>provided</scope>
-			<exclusions>
-				<exclusion>
-					<artifactId>plotsquared-core</artifactId>
-					<groupId>*</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<!-- Lands -->
-		<dependency>
-			<groupId>com.github.angeschossen</groupId>
-			<artifactId>LandsAPI</artifactId>
-			<version>7.0.2</version>
-			<scope>provided</scope>
-		</dependency>
+    </repositories>
 
 
-		<!-- MythicMobs -->
-		<dependency>
-			<groupId>io.lumine</groupId>
-			<artifactId>Mythic-Dist</artifactId>
-			<version>5.6.1</version>
-			<scope>provided</scope>
-		</dependency>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.intellectualsites.bom</groupId>
+                <artifactId>bom-newest</artifactId>
+                <version>1.47</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-		<!-- FactionsUUID -->
-		<dependency>
-			<groupId>com.massivecraft</groupId>
-			<artifactId>Factions</artifactId>
-			<version>1.6.9.5-U0.6.33</version>
-			<scope>provided</scope>
-		</dependency>
+    <dependencies>
+
+        <!--This adds the Spigot API artifact to the build -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.19.3-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- SuperiorSkyblockAPI -->
+        <dependency>
+            <groupId>com.bgsoftware</groupId>
+            <artifactId>SuperiorSkyblockAPI</artifactId>
+            <version>2024.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+
+        <!-- JetsMinions -->
+        <dependency>
+            <groupId>me.jet315</groupId>
+            <artifactId>jetsminions</artifactId>
+            <version>7.1.15</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/JetsMinions-7.5.1.jar</systemPath>
+        </dependency>
+
+        <!-- Minions-Miner-0.0.9 -->
+        <dependency>
+            <groupId>com.thecrappiest</groupId>
+            <artifactId>minions-miner</artifactId>
+            <version>0.0.9</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/Minions-Miner-0.1.1.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.Slimefun</groupId>
+            <artifactId>Slimefun4</artifactId>
+            <version>RC-22</version>
+        </dependency>
+
+        <!-- Project Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.32</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Holographic Displays -->
+        <dependency>
+            <groupId>com.gmail.filoghost.holographicdisplays</groupId>
+            <artifactId>holographicdisplays-api</artifactId>
+            <version>2.4.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Vault -->
+        <dependency>
+            <groupId>com.github.MilkBowl</groupId>
+            <artifactId>VaultAPI</artifactId>
+            <version>1.7.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- BentoBox -->
+        <dependency>
+            <groupId>world.bentobox</groupId>
+            <artifactId>bentobox</artifactId>
+            <version>1.16.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- IridiumSkyblock -->
+        <dependency>
+            <groupId>com.iridium</groupId>
+            <artifactId>iridiumskyblock</artifactId>
+            <version>3.0.7</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/IridiumSkyblock-3.2.8.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.decentsoftware-eu</groupId>
+            <artifactId>decentholograms</artifactId>
+            <version>2.3.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- ItemsAdder -->
+        <dependency>
+            <groupId>com.github.LoneDev6</groupId>
+            <artifactId>api-itemsadder</artifactId>
+            <version>3.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- EcoItems -->
+        <dependency>
+            <groupId>com.willfp</groupId>
+            <artifactId>EcoItems</artifactId>
+            <version>3.46.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/EcoItems_v3.46.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.willfp</groupId>
+            <artifactId>eco</artifactId>
+            <version>3.46.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/eco-6.35.1-all.jar</systemPath>
+        </dependency>
+
+        <!-- NBT-API -->
+        <dependency>
+            <groupId>de.tr7zw</groupId>
+            <artifactId>item-nbt-api</artifactId>
+            <version>2.13.2</version>
+        </dependency>
+
+        <!-- WorldEdit -->
+        <dependency>
+            <groupId>com.sk89q.worldedit</groupId>
+            <artifactId>worldedit-core</artifactId>
+            <version>7.2.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sk89q.worldedit</groupId>
+            <artifactId>worldedit-bukkit</artifactId>
+            <version>7.2.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Oraxen -->
+        <dependency>
+            <groupId>com.github.oraxen</groupId>
+            <artifactId>oraxen</artifactId>
+            <version>1.173.0</version>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>me.gabytm.util</groupId>
+                    <artifactId>actions-spigot</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.jetbrains</groupId>
+                    <artifactId>annotations</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.ticxo</groupId>
+                    <artifactId>PlayerAnimator</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.github.stefvanschie.inventoryframework</groupId>
+                    <artifactId>IF</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.th0rgal</groupId>
+                    <artifactId>protectionlib</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>dev.triumphteam</groupId>
+                    <artifactId>triumph-gui</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.bstats</groupId>
+                    <artifactId>bstats-bukkit</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.jeff-media</groupId>
+                    <artifactId>custom-block-data</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.jeff-media</groupId>
+                    <artifactId>persistent-data-serializer</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.jeff_media</groupId>
+                    <artifactId>MorePersistentDataTypes</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>gs.mclo</groupId>
+                    <artifactId>java</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- WildStacker -->
+        <dependency>
+            <groupId>com.bgsoftware</groupId>
+            <artifactId>WildStackerAPI</artifactId>
+            <version>3.7.0</version>
+        </dependency>
+
+        <!-- GameProfile -->
+        <dependency>
+            <groupId>com.mojang</groupId>
+            <artifactId>authlib</artifactId>
+            <version>1.5.25</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- CMI -->
+        <dependency>
+            <groupId>com.zrips</groupId>
+            <artifactId>cmi</artifactId>
+            <version>8.7.8.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/CMIAPI8.7.8.2.jar</systemPath>
+        </dependency>
+
+        <!-- PlaceholderAPI -->
+        <dependency>
+            <groupId>me.clip</groupId>
+            <artifactId>placeholderapi</artifactId>
+            <version>2.11.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- HikariCP -->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>4.0.3</version>
+            <scope>compile</scope>
+            <type>jar</type>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.6</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- MMOItems -->
+        <dependency>
+            <groupId>net.Indyuce</groupId>
+            <artifactId>MMOItems-API</artifactId>
+            <version>6.9.2-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- LitMinions -->
+        <dependency>
+            <groupId>com.github.WaterArchery</groupId>
+            <artifactId>LitMinionsAPI</artifactId>
+            <version>2.34</version>
+        </dependency>
+
+        <!-- PlotSquared -->
+        <dependency>
+            <groupId>com.intellectualsites.plotsquared</groupId>
+            <artifactId>plotsquared-core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.intellectualsites.plotsquared</groupId>
+            <artifactId>plotsquared-bukkit</artifactId>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>plotsquared-core</artifactId>
+                    <groupId>*</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Lands -->
+        <dependency>
+            <groupId>com.github.angeschossen</groupId>
+            <artifactId>LandsAPI</artifactId>
+            <version>7.0.2</version>
+            <scope>provided</scope>
+        </dependency>
 
 
-	</dependencies>
+        <!-- MythicMobs -->
+        <dependency>
+            <groupId>io.lumine</groupId>
+            <artifactId>Mythic-Dist</artifactId>
+            <version>5.6.1</version>
+            <scope>provided</scope>
+        </dependency>
 
-	<build>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<!-- Keeping filtering at true here reduces plugin.yml
-				redundancy! -->
-				<filtering>true</filtering>
-				<includes>
-					<include>plugin.yml</include>
-				</includes>
-			</resource>
-			<resource>
-				<directory>src/main/resources</directory>
-				<!-- Keep filtering at false for other resources to prevent bad
-				magic -->
-				<filtering>true</filtering>
-				<excludes>
-					<exclude>**/*.java</exclude>
-					<exclude>plugin.yml</exclude>
-				</excludes>
-			</resource>
-		</resources>
+        <!-- FactionsUUID -->
+        <dependency>
+            <groupId>com.massivecraft</groupId>
+            <artifactId>Factions</artifactId>
+            <version>1.6.9.5-U0.6.33</version>
+            <scope>provided</scope>
+        </dependency>
 
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.7.0</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-shade-plugin</artifactId>
-				<version>3.3.0</version>
-				<executions>
-					<execution>
-						<id>shade</id>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<relocations>
-						<relocation>
-							<pattern>de.tr7zw.changeme.nbtapi</pattern>
-							<shadedPattern>
-								me.kryniowesegryderiusz.kgenerators.dependencies.shaded.nbtapi</shadedPattern>
-						</relocation>
-					</relocations>
-					<artifactSet>
-						<includes>
-							<include>de.tr7zw:*</include>
-							<include>com.zaxxer:*</include>
-							<include>org.slf4j:*</include>
-						</includes>
-					</artifactSet>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <!-- Keeping filtering at true here reduces plugin.yml
+                redundancy! -->
+                <filtering>true</filtering>
+                <includes>
+                    <include>plugin.yml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <!-- Keep filtering at false for other resources to prevent bad
+                magic -->
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                    <exclude>plugin.yml</exclude>
+                </excludes>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <id>shade</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <relocations>
+                        <relocation>
+                            <pattern>de.tr7zw.changeme.nbtapi</pattern>
+                            <shadedPattern>
+                                me.kryniowesegryderiusz.kgenerators.dependencies.shaded.nbtapi
+                            </shadedPattern>
+                        </relocation>
+                    </relocations>
+                    <artifactSet>
+                        <includes>
+                            <include>de.tr7zw:*</include>
+                            <include>com.zaxxer:*</include>
+                            <include>org.slf4j:*</include>
+                        </includes>
+                    </artifactSet>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
